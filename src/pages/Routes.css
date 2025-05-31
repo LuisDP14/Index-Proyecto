@@ -1,0 +1,205 @@
+.routes-wrapper {
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.routes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.controls-panel {
+  padding: 1.5rem;
+  background-color: var(--primary-color);
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.form-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.location-input {
+  padding: 0.75rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 6px;
+  background-color: white;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.location-input:focus {
+  outline: none;
+  border-color: var(--button-color);
+  box-shadow: 0 0 0 2px rgba(173, 181, 189, 0.2);
+}
+
+.travel-modes {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.mode-button {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--accent-color);
+  background-color: white;
+  color: var(--text-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mode-button:hover {
+  border-color: var(--button-color);
+}
+
+.mode-button.active {
+  background-color: var(--button-color);
+  border-color: var(--button-color);
+  color: white;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.calculate-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  font-weight: 600;
+}
+
+.calculate-button:hover:not(:disabled) {
+  background-color: var(--button-hover);
+}
+
+.calculate-button:disabled {
+  background-color: var(--accent-color);
+  cursor: not-allowed;
+}
+
+.clear-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.clear-button:hover {
+  background-color: #5a6268;
+}
+
+.route-info {
+  padding: 1rem;
+  background-color: #d1ecf1;
+  border: 1px solid #bee5eb;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.route-info h4 {
+  margin: 0 0 0.5rem 0;
+  color: #0c5460;
+}
+
+.route-info p {
+  margin: 0.25rem 0;
+  color: #0c5460;
+  font-size: 0.9rem;
+}
+
+.error-message {
+  padding: 1rem;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  color: #721c24;
+  margin-top: 1rem;
+}
+
+.map-routes-container {
+  height: 500px;
+  width: 100%;
+}
+
+.click-instruction {
+  padding: 1rem;
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  color: #856404;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .form-section {
+    grid-template-columns: 1fr;
+  }
+
+  .travel-modes {
+    justify-content: center;
+  }
+
+  .action-buttons {
+    justify-content: center;
+  }
+
+  .map-routes-container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls-panel {
+    padding: 1rem;
+  }
+
+  .travel-modes {
+    flex-direction: column;
+  }
+
+  .mode-button {
+    justify-content: center;
+  }
+
+  .map-routes-container {
+    height: 350px;
+  }
+}

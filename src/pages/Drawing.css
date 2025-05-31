@@ -1,0 +1,274 @@
+.drawing-wrapper {
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.drawing-container {
+  display: flex;
+  height: 700px;
+}
+
+.drawing-controls {
+  width: 350px;
+  background-color: var(--primary-color);
+  border-right: 1px solid var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.controls-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--secondary-color);
+  background-color: white;
+}
+
+.controls-header h3 {
+  margin: 0 0 1rem 0;
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.drawing-tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tool-button {
+  padding: 0.75rem;
+  border: 2px solid var(--accent-color);
+  background-color: white;
+  color: var(--text-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.tool-button:hover {
+  border-color: var(--button-color);
+}
+
+.tool-button.active {
+  background-color: var(--button-color);
+  border-color: var(--button-color);
+  color: white;
+}
+
+.tool-icon {
+  font-size: 1.2rem;
+}
+
+.map-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.control-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent-color);
+  background-color: white;
+  color: var(--text-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  flex: 1;
+}
+
+.control-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.control-button.active {
+  background-color: var(--button-color);
+  color: white;
+  border-color: var(--button-color);
+}
+
+.shapes-panel {
+  flex: 1;
+  padding: 1rem;
+}
+
+.shapes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.shapes-header h4 {
+  margin: 0;
+  color: var(--text-color);
+}
+
+.clear-all-button {
+  padding: 0.5rem 1rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.clear-all-button:hover {
+  background-color: #c82333;
+}
+
+.shapes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.shape-item {
+  background-color: white;
+  border: 1px solid var(--secondary-color);
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.shape-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.shape-title {
+  font-weight: 600;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shape-type {
+  font-size: 0.8rem;
+  background-color: var(--secondary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  color: var(--text-color);
+}
+
+.delete-shape-button {
+  padding: 0.25rem 0.5rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.3s;
+}
+
+.delete-shape-button:hover {
+  background-color: #c82333;
+}
+
+.shape-info {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.coordinates-list {
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: var(--primary-color);
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+.coordinate-item {
+  margin-bottom: 0.25rem;
+  color: var(--text-color);
+}
+
+.map-drawing-container {
+  flex: 1;
+  position: relative;
+}
+
+.no-shapes {
+  text-align: center;
+  color: var(--accent-color);
+  font-style: italic;
+  padding: 2rem;
+}
+
+.drawing-instructions {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #856404;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .drawing-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .drawing-controls {
+    width: 100%;
+    max-height: none;
+  }
+
+  .map-drawing-container {
+    height: 500px;
+  }
+
+  .drawing-tools {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .drawing-tools {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .map-controls {
+    flex-direction: column;
+  }
+
+  .map-drawing-container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls-header {
+    padding: 1rem;
+  }
+
+  .shapes-panel {
+    padding: 0.75rem;
+  }
+
+  .drawing-tools {
+    grid-template-columns: 1fr;
+  }
+}
